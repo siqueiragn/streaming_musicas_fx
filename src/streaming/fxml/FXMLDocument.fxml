@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="499.9999000000025" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="streaming.fxml.FXMLDocumentController">
+  <children>
+    <MenuBar layoutX="0.0" layoutY="0.0" prefHeight="25.0" prefWidth="500.0">
+      <menus>
+        <Menu mnemonicParsing="false" text="Músicas">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#trocarTelaCadastrarMusica" text="Cadastrar" />
+            <MenuItem mnemonicParsing="false" onAction="#trocarTelaListarMusica" text="Listar" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Coleções">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#trocarTelaCadastrarColecoes" text="Cadastrar" />
+            <MenuItem mnemonicParsing="false" onAction="#trocarTelaListarColecoes" text="Listar" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Playlists">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#trocarTelaCadastrarPlaylists" text="Cadastrar" />
+            <MenuItem mnemonicParsing="false" onAction="#trocarTelaListarPlaylists" text="Listar" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Artistas">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#trocarTelaCadastrarArtistas" text="Cadastrar" />
+            <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <ComboBox layoutX="51.0" layoutY="95.0" prefHeight="25.0" prefWidth="407.0" promptText="Coleção">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Item 1" />
+          <String fx:value="Item 2" />
+          <String fx:value="Item 3" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+    <TextField layoutX="50.0" layoutY="53.0" prefHeight="25.0" prefWidth="408.0" promptText="Nome" />
+    <Button layoutX="271.0" layoutY="135.0" mnemonicParsing="false" prefHeight="25.0" text="Button" />
+    <Button layoutX="344.0" layoutY="317.0" mnemonicParsing="false" prefWidth="56.0" text="ADD" />
+    <TableView layoutX="271.0" layoutY="216.0" prefHeight="100.0" prefWidth="200.00009999999747">
+      <columns>
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="38.0" text="ID" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="162.0" text="NOME" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="162.0" text="NOME" />
+      </columns>
+    </TableView>
+    <TableView layoutX="31.0" layoutY="216.0" prefHeight="100.0" prefWidth="200.00009999999747">
+      <columns>
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="38.0" text="ID" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="162.0" text="NOME" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="162.0" text="NOME" />
+      </columns>
+    </TableView>
+    <Button layoutX="104.0" layoutY="317.0" mnemonicParsing="false" prefWidth="56.0" text="ADD" />
+    <Label layoutX="88.0" layoutY="193.0" text="COMPOSITORES" />
+    <Label layoutX="336.0" layoutY="193.0" text="INTERPRETES" />
+    <TextField layoutX="50.0" layoutY="135.0" prefHeight="25.0" prefWidth="200.0" promptText="Duração" />
+    <ListView layoutX="32.0" layoutY="357.0" prefHeight="114.0" prefWidth="200.0" />
+    <ListView layoutX="272.0" layoutY="357.0" prefHeight="114.0" prefWidth="200.0" />
+  </children>
+</AnchorPane>
