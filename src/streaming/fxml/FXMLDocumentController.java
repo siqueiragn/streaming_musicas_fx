@@ -29,11 +29,12 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void trocarTelaCadastrarMusica(ActionEvent event) {
-        StreamingMusica.trocarTela("CadastrarMusica.FXML");
+        StreamingMusica.trocarTela("CadastrarMusica.fxml");
     }
 
     @FXML
     private void trocarTelaListarMusica(ActionEvent event) {
+        StreamingMusica.trocarTela("ListarMusica.fxml");
     }
 
     @FXML
@@ -43,10 +44,12 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void trocarTelaListarColecoes(ActionEvent event) {
+        StreamingMusica.trocarTela("ListarColecao.fxml");
     }
 
     @FXML
     private void trocarTelaCadastrarPlaylists(ActionEvent event) {
+        StreamingMusica.trocarTela("CadastrarPlaylist.fxml");
     }
 
     @FXML

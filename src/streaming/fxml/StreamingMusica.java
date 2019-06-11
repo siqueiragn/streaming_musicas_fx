@@ -37,7 +37,7 @@ public class StreamingMusica extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("ListarMusica.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("ListarColecao.fxml"));
         //Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         st = stage;
         Scene scene = new Scene(root);

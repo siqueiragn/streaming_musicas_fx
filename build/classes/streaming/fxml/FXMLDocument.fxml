@@ -6,6 +6,7 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane id="AnchorPane" prefHeight="499.9999000000025" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="streaming.fxml.FXMLDocumentController">
   <children>
@@ -25,48 +26,25 @@
         </Menu>
         <Menu mnemonicParsing="false" text="Playlists">
           <items>
-            <MenuItem mnemonicParsing="false" text="Cadastrar" />
-            <MenuItem mnemonicParsing="false" text="Listar" />
+            <MenuItem mnemonicParsing="false" onAction="#trocarTelaCadastrarPlaylists" text="Cadastrar" />
+            <MenuItem mnemonicParsing="false" onAction="#trocarTelaListarPlaylists" text="Listar" />
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Artistas">
           <items>
-            <MenuItem mnemonicParsing="false" text="Action 1" />
+            <MenuItem mnemonicParsing="false" onAction="#trocarTelaCadastrarArtistas" text="Cadastrar" />
+            <MenuItem mnemonicParsing="false" onAction="#trocarTelaListarArtistas" text="Listar" />
           </items>
         </Menu>
       </menus>
     </MenuBar>
-    <ComboBox layoutX="51.0" layoutY="95.0" prefHeight="25.0" prefWidth="407.0" promptText="Coleção">
-      <items>
-        <FXCollections fx:factory="observableArrayList">
-          <String fx:value="Item 1" />
-          <String fx:value="Item 2" />
-          <String fx:value="Item 3" />
-        </FXCollections>
-      </items>
-    </ComboBox>
-    <TextField layoutX="50.0" layoutY="53.0" prefHeight="25.0" prefWidth="408.0" promptText="Nome" />
-    <Button layoutX="271.0" layoutY="135.0" mnemonicParsing="false" prefHeight="25.0" text="Button" />
-    <Button layoutX="344.0" layoutY="317.0" mnemonicParsing="false" prefWidth="56.0" text="ADD" />
-    <TableView layoutX="271.0" layoutY="216.0" prefHeight="100.0" prefWidth="200.00009999999747">
-      <columns>
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="38.0" text="ID" />
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="162.0" text="NOME" />
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="162.0" text="NOME" />
-      </columns>
-    </TableView>
-    <TableView layoutX="31.0" layoutY="216.0" prefHeight="100.0" prefWidth="200.00009999999747">
-      <columns>
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="38.0" text="ID" />
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="162.0" text="NOME" />
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="162.0" text="NOME" />
-      </columns>
-    </TableView>
-    <Button layoutX="104.0" layoutY="317.0" mnemonicParsing="false" prefWidth="56.0" text="ADD" />
-    <Label layoutX="88.0" layoutY="193.0" text="COMPOSITORES" />
-    <Label layoutX="336.0" layoutY="193.0" text="INTERPRETES" />
-    <TextField layoutX="50.0" layoutY="135.0" prefHeight="25.0" prefWidth="200.0" promptText="Duração" />
-    <ListView layoutX="32.0" layoutY="357.0" prefHeight="114.0" prefWidth="200.0" />
-    <ListView layoutX="272.0" layoutY="357.0" prefHeight="114.0" prefWidth="200.0" />
+    <Label layoutX="142.0" layoutY="142.0" text="STREAMING">
+      <font>
+        <Font size="40.0" fx:id="x1" />
+      </font>
+    </Label>
+    <Label font="$x1" layoutX="226.0" layoutY="223.0" text="DE" />
+    <Label font="$x1" layoutX="166.0" layoutY="318.0" text="MÚSICAS" />
+    <Label layoutX="147.0" layoutY="455.0" text="Gabriel Nunes de Siqueira, POO1 - 2019" />
   </children>
 </AnchorPane>
