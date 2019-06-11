@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="streaming.fxml.CadastrarColecaoController">
+  <children>
+    <Button layoutX="341.0" layoutY="379.0" mnemonicParsing="false" onAction="#vincularCompositor" prefWidth="56.0" text="ADD" />
+    <Button layoutX="122.0" layoutY="379.0" mnemonicParsing="false" onAction="#vincularInterprete" prefWidth="56.0" text="ADD" />
+    <Label layoutX="325.0" layoutY="149.0" text="COMPOSITORES" />
+    <Label layoutX="115.0" layoutY="149.0" text="INTERPRETES" />
+    <ListView fx:id="listaCompositores" layoutX="269.0" layoutY="169.0" prefHeight="200.0" prefWidth="200.0" />
+    <ListView fx:id="listaInterpretes" layoutX="50.0" layoutY="169.0" prefHeight="200.0" prefWidth="200.0" />
+    <Button layoutX="215.0" layoutY="465.0" mnemonicParsing="false" onAction="#salvarColecao" text="Cadastrar" />
+    <TextField fx:id="nomeColecao" layoutX="169.0" layoutY="53.0" prefWidth="200.0" promptText="NOME" />
+    <TextField id="ano" fx:id="anoColecao" layoutX="169.0" layoutY="85.0" prefWidth="71.0" promptText="ANO" />
+    <ComboBox fx:id="tiposColecoes" layoutX="254.0" layoutY="85.0" prefHeight="21.0" prefWidth="115.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList" />
+      </items>
+    </ComboBox>
+    <Label fx:id="listaInterpretesAdicionados" layoutX="50.0" layoutY="409.0" text="Interpretes:" />
+    <Label fx:id="listaCompositoresAdicionados" layoutX="50.0" layoutY="436.0" text="Compositores:" />
+  </children>
+</AnchorPane>
