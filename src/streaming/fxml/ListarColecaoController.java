@@ -11,13 +11,18 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import streaming.model.Colecao;
 import streaming.model.Interprete;
+import streaming.model.Musica;
 
 /**
  * FXML Controller class
@@ -38,6 +43,20 @@ public class ListarColecaoController implements Initializable {
     private TableColumn<Colecao, String> colNomeColecao;
     @FXML
     private TableColumn<Colecao, Double> colLancamentoColecao;
+    @FXML
+    private Label labelCompositores;
+    @FXML
+    private Label labelInterpretes;
+    @FXML
+    private Button btnVisualizar;
+    @FXML
+    private TextField inputNomeColecao;
+    @FXML
+    private TextField inputAnoColecao;
+    @FXML
+    private ComboBox<String> inputTipoColecao;
+    @FXML
+    private ListView<Musica> listaMusicas;
 
     /**
      * Initializes the controller class.
@@ -77,6 +96,36 @@ public class ListarColecaoController implements Initializable {
 
     @FXML
     private void trocarTelaEditarColecao(ActionEvent event) {
+        
+        Colecao c = colecaoTable.getSelectionModel().getSelectedItem().getById();
+        
+        inputTipoColecao.getItems().clear();
+       
+        inputTipoColecao.getItems().add("Album");
+        inputTipoColecao.getItems().add("Bootleg");
+        inputTipoColecao.getItems().add("Compilação");
+        inputTipoColecao.getItems().add("Single");
+        
+        colecaoTable.setVisible(false);
+        btnVisualizar.setVisible(false);
+        
+        inputAnoColecao.setVisible(true);
+        inputAnoColecao.setText(String.valueOf(c.getLancamento()));
+        inputNomeColecao.setVisible(true);
+        inputNomeColecao.setText(c.getNome());
+        inputTipoColecao.setVisible(true);
+        inputTipoColecao.setValue(String.valueOf(c.getClass()));
+        
+        listaMusicas.setVisible(true);
+        
+        for (Musica m : c.getMusicasById()) {
+            listaMusicas.getItems().add(m);
+        }
+        
+    }
+
+    @FXML
+    private void editarColecao(ActionEvent event) {
     }
     
 }

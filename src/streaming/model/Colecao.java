@@ -172,5 +172,88 @@ public class Colecao {
         return interpretes;
 
     }
+
+    public Colecao getById() {
+        
+        Connection con = (new Conector()).getConexao();
+              
+        String query = "SELECT * FROM POO1_COLECAO WHERE ID = ?";
+        Colecao c = null;
+        try {
+            PreparedStatement ps = con.prepareStatement(query); 
+            ps.setInt(1, this.getId());       
+        
+            ResultSet rs = ps.executeQuery();
+        
+            while (rs.next()) {
+                
+                switch(rs.getString("tipo")) {
+                    case "Album": 
+                        c = new Album();
+                    break;
+                    case "Bootleg":
+                        c = new Bootleg();
+                    break;
+                    case "Compilacao":
+                        c = new Compilacao();
+                    break;
+                    case "Single": 
+                        c = new Single();
+                    break;
+                    default:
+                        c = new Colecao();
+                    break;
+                }
+                c.setId(rs.getInt("id"));
+                c.setNome(rs.getString("nome"));
+                c.setLancamento(rs.getInt("lancamento"));
+            }
+
+        } catch ( SQLException e ) {
+            System.out.println("Ocorreu um problema ao recuperar os dados!");
+            e.printStackTrace();
+        }
+        
+        return c;
+    }
+    
+    
+    public List<Musica> getMusicasById() {
+        
+        Connection con = (new Conector()).getConexao();
+              
+        List<Musica> musicas = new ArrayList<>();
+        String query = "SELECT PM.ID AS ID_MUSICA, " +
+                       "       PM.NOME AS NOME_MUSICA, " +
+                       "       PM.DURACAO AS DURACAO_MUSICA, " +
+                       "       PM.LETRA AS LETRA_MUSICA, " +
+                       "       PL.TEXTO AS TEXTO_LETRA " +
+                       "     FROM POO1_MUSICA PM " +
+                       "LEFT JOIN POO1_COLECAO PC ON PM.COLECAO = PC.ID " +
+                       "LEFT JOIN POO1_LETRA PL ON PL.ID = PM.LETRA " +
+                       "    WHERE PM.COLECAO = ? ";
+        try {
+            PreparedStatement ps = con.prepareStatement(query); 
+            ps.setInt(1, this.getId());       
+        
+            ResultSet rs = ps.executeQuery();
+        
+            while (rs.next()) {
+                Musica m = new Musica();
+                m.setId(rs.getInt("id_musica"));
+                m.setNome(rs.getString("nome_musica"));
+                m.setDuracao(rs.getDouble("duracao_musica"));
+                m.setLetra(new Letra(rs.getInt("letra_musica"), rs.getString("texto_letra") ));
+                musicas.add(m);
+            }
+
+        } catch ( SQLException e ) {
+            System.out.println("Ocorreu um problema ao recuperar os dados!");
+            e.printStackTrace();
+        }
+        
+        return musicas;
+    }
+
     
 }

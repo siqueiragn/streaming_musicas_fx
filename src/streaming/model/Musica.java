@@ -185,4 +185,8 @@ public class Musica {
         return musicas;
     }
     
+    public String toString() {
+        return this.nome;
+    }
+    
 }
