@@ -54,9 +54,9 @@ public class ListarColecaoController implements Initializable {
     @FXML
     private TextField inputAnoColecao;
     @FXML
-    private ComboBox<String> inputTipoColecao;
-    @FXML
     private ListView<Musica> listaMusicas;
+    @FXML
+    private TextField tipoColecao;
 
     /**
      * Initializes the controller class.
@@ -99,13 +99,6 @@ public class ListarColecaoController implements Initializable {
         
         Colecao c = colecaoTable.getSelectionModel().getSelectedItem().getById();
         
-        inputTipoColecao.getItems().clear();
-       
-        inputTipoColecao.getItems().add("Album");
-        inputTipoColecao.getItems().add("Bootleg");
-        inputTipoColecao.getItems().add("Compilação");
-        inputTipoColecao.getItems().add("Single");
-        
         colecaoTable.setVisible(false);
         btnVisualizar.setVisible(false);
         
@@ -113,8 +106,8 @@ public class ListarColecaoController implements Initializable {
         inputAnoColecao.setText(String.valueOf(c.getLancamento()));
         inputNomeColecao.setVisible(true);
         inputNomeColecao.setText(c.getNome());
-        inputTipoColecao.setVisible(true);
-        inputTipoColecao.setValue(String.valueOf(c.getClass()));
+        tipoColecao.setVisible(true);
+        tipoColecao.setText(String.valueOf(c.getClass().getSimpleName()));
         
         listaMusicas.setVisible(true);
         
@@ -126,6 +119,51 @@ public class ListarColecaoController implements Initializable {
 
     @FXML
     private void editarColecao(ActionEvent event) {
+    }
+    
+    @FXML
+    private void trocarTelaCadastrarMusica(ActionEvent event) {
+        StreamingMusica.trocarTela("CadastrarMusica.fxml");
+    }
+
+    @FXML
+    private void trocarTelaListarMusica(ActionEvent event) {
+        StreamingMusica.trocarTela("ListarMusica.fxml");
+    }
+
+    @FXML
+    private void trocarTelaCadastrarColecoes(ActionEvent event) {
+        StreamingMusica.trocarTela("CadastrarColecao.fxml");
+    }
+
+    @FXML
+    private void trocarTelaListarColecoes(ActionEvent event) {
+        StreamingMusica.trocarTela("ListarColecao.fxml");
+    }
+
+    @FXML
+    private void trocarTelaCadastrarPlaylists(ActionEvent event) {
+        StreamingMusica.trocarTela("CadastrarPlaylist.fxml");
+    }
+
+    @FXML
+    private void trocarTelaListarPlaylists(ActionEvent event) {
+        StreamingMusica.trocarTela("ListarPlaylist.fxml");
+    }
+
+    @FXML
+    private void trocarTelaCadastrarArtistas(ActionEvent event) {
+        StreamingMusica.trocarTela("CadastrarArtista.fxml");
+    }
+
+    @FXML
+    private void trocarTelaListarArtistas(ActionEvent event) {
+        StreamingMusica.trocarTela("ListarArtista.fxml");
+    }
+
+    @FXML
+    private void trocarTelaHome(ActionEvent event) {
+        StreamingMusica.trocarTela("Home.fxml");
     }
     
 }

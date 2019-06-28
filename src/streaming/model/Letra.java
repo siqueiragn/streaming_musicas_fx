@@ -63,7 +63,6 @@ public class Letra {
 
             while (rs.next()) {
                 chaveGerada = rs.getInt(1);
-                System.out.println(chaveGerada + "GEROUUUUUUUUUUUUUUUUUUUUUUUUUUUUU");
             }
             this.setId(chaveGerada);
             

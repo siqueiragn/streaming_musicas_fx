@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="streaming.fxml.ListarColecaoController">
+  <children>
+    <TextField fx:id="tipoColecao" disable="true" layoutX="231.0" layoutY="81.0" prefWidth="115.0" visible="false" />
+    <Label fx:id="labelCompositores" layoutX="321.0" layoutY="295.0" text="COMPOSITORES" />
+    <Label fx:id="labelInterpretes" layoutX="111.0" layoutY="295.0" text="INTERPRETES" />
+    <ListView fx:id="listaCompositores" layoutX="265.0" layoutY="317.0" prefHeight="145.0" prefWidth="200.0" />
+    <ListView fx:id="listaInterpretes" layoutX="46.0" layoutY="317.0" prefHeight="145.0" prefWidth="200.0" />
+    <TableView fx:id="colecaoTable" layoutX="46.0" layoutY="49.0" prefHeight="212.0" prefWidth="422.0">
+      <columns>
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="38.0" text="ID" fx:id="colIdColecao" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="283.0" text="NOME" fx:id="colNomeColecao" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="98.0" text="LANÇAMENTO" fx:id="colLancamentoColecao" />
+      </columns>
+    </TableView>
+    <Button fx:id="btnVisualizar" layoutX="222.0" layoutY="274.0" mnemonicParsing="false" onAction="#trocarTelaEditarColecao" text="Visualizar" />
+    <TextField id="nomeColecao" fx:id="inputNomeColecao" disable="true" layoutX="146.0" layoutY="49.0" prefWidth="200.0" promptText="NOME" visible="false" />
+    <TextField id="ano" fx:id="inputAnoColecao" disable="true" layoutX="146.0" layoutY="81.0" prefWidth="71.0" promptText="ANO" visible="false" />
+    <Button layoutX="229.0" layoutY="117.0" mnemonicParsing="false" onAction="#editarColecao" text="Editar" visible="false" />
+    <ListView fx:id="listaMusicas" layoutX="46.0" layoutY="156.0" prefHeight="131.0" prefWidth="422.0" visible="false" />
+  </children>
+</AnchorPane>

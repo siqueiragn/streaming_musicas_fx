@@ -24,7 +24,7 @@ public class Bootleg extends Colecao{
     public Bootleg() {
     }
     
-       public boolean insert() {
+    public boolean insert() {
         
         Connection con = (new Conector()).getConexao();
         

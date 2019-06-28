@@ -94,9 +94,6 @@ public class ListarMusicaController implements Initializable {
           
         });
         
-        
-        
-        
     }    
 
     @FXML
@@ -105,6 +102,51 @@ public class ListarMusicaController implements Initializable {
 
     @FXML
     private void visualizarMusica(ActionEvent event) {
+    }
+    
+    @FXML
+    private void trocarTelaCadastrarMusica(ActionEvent event) {
+        StreamingMusica.trocarTela("CadastrarMusica.fxml");
+    }
+
+    @FXML
+    private void trocarTelaListarMusica(ActionEvent event) {
+        StreamingMusica.trocarTela("ListarMusica.fxml");
+    }
+
+    @FXML
+    private void trocarTelaCadastrarColecoes(ActionEvent event) {
+        StreamingMusica.trocarTela("CadastrarColecao.fxml");
+    }
+
+    @FXML
+    private void trocarTelaListarColecoes(ActionEvent event) {
+        StreamingMusica.trocarTela("ListarColecao.fxml");
+    }
+
+    @FXML
+    private void trocarTelaCadastrarPlaylists(ActionEvent event) {
+        StreamingMusica.trocarTela("CadastrarPlaylist.fxml");
+    }
+
+    @FXML
+    private void trocarTelaListarPlaylists(ActionEvent event) {
+        StreamingMusica.trocarTela("ListarPlaylist.fxml");
+    }
+
+    @FXML
+    private void trocarTelaCadastrarArtistas(ActionEvent event) {
+        StreamingMusica.trocarTela("CadastrarArtista.fxml");
+    }
+
+    @FXML
+    private void trocarTelaListarArtistas(ActionEvent event) {
+        StreamingMusica.trocarTela("ListarArtista.fxml");
+    }
+
+    @FXML
+    private void trocarTelaHome(ActionEvent event) {
+        StreamingMusica.trocarTela("Home.fxml");
     }
     
 }

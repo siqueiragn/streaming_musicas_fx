@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="streaming.fxml.ListarArtistaController">
+  <children>
+    <MenuBar layoutX="0.0" layoutY="1.0" prefHeight="25.0" prefWidth="500.0">
+      <menus>
+        <Menu mnemonicParsing="false" text="Home">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#trocarTelaHome" text="Inicio" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Músicas">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#trocarTelaCadastrarMusica" text="Cadastrar" />
+            <MenuItem mnemonicParsing="false" onAction="#trocarTelaListarMusica" text="Listar" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Coleções">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#trocarTelaCadastrarColecoes" text="Cadastrar" />
+            <MenuItem mnemonicParsing="false" onAction="#trocarTelaListarColecoes" text="Listar" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Playlists">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#trocarTelaCadastrarPlaylists" text="Cadastrar" />
+            <MenuItem mnemonicParsing="false" onAction="#trocarTelaListarPlaylists" text="Listar" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Artistas">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#trocarTelaCadastrarArtistas" text="Cadastrar" />
+            <MenuItem mnemonicParsing="false" onAction="#trocarTelaListarArtistas" text="Listar" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+  </children>
+</AnchorPane>

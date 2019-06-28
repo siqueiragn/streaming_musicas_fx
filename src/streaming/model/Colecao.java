@@ -35,6 +35,12 @@ public class Colecao {
         this.lancamento = lancamento;
     }
 
+    public Colecao(int id, String nome, int lancamento) {
+        this.id = id;
+        this.nome = nome;
+        this.lancamento = lancamento;
+    }
+   
     public Colecao() {}
 
     public int getId() {

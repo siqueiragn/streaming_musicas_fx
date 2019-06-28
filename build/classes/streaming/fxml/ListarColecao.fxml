@@ -9,6 +9,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="streaming.fxml.ListarColecaoController">
   <children>
+    <TextField fx:id="tipoColecao" disable="true" layoutX="231.0" layoutY="81.0" prefWidth="115.0" visible="false" />
     <Label fx:id="labelCompositores" layoutX="321.0" layoutY="295.0" text="COMPOSITORES" />
     <Label fx:id="labelInterpretes" layoutX="111.0" layoutY="295.0" text="INTERPRETES" />
     <ListView fx:id="listaCompositores" layoutX="265.0" layoutY="317.0" prefHeight="145.0" prefWidth="200.0" />
@@ -21,14 +22,42 @@
       </columns>
     </TableView>
     <Button fx:id="btnVisualizar" layoutX="222.0" layoutY="274.0" mnemonicParsing="false" onAction="#trocarTelaEditarColecao" text="Visualizar" />
-    <TextField id="nomeColecao" fx:id="inputNomeColecao" layoutX="146.0" layoutY="49.0" prefWidth="200.0" promptText="NOME" visible="false" />
-    <TextField id="ano" fx:id="inputAnoColecao" layoutX="146.0" layoutY="81.0" prefWidth="71.0" promptText="ANO" visible="false" />
-    <ComboBox id="tiposColecoes" fx:id="inputTipoColecao" layoutX="231.0" layoutY="81.0" prefHeight="21.0" prefWidth="115.0" visible="false">
-      <items>
-        <FXCollections fx:factory="observableArrayList" />
-      </items>
-    </ComboBox>
+    <TextField id="nomeColecao" fx:id="inputNomeColecao" disable="true" layoutX="146.0" layoutY="49.0" prefWidth="200.0" promptText="NOME" visible="false" />
+    <TextField id="ano" fx:id="inputAnoColecao" disable="true" layoutX="146.0" layoutY="81.0" prefWidth="71.0" promptText="ANO" visible="false" />
     <Button layoutX="229.0" layoutY="117.0" mnemonicParsing="false" onAction="#editarColecao" text="Editar" visible="false" />
     <ListView fx:id="listaMusicas" layoutX="46.0" layoutY="156.0" prefHeight="131.0" prefWidth="422.0" visible="false" />
+    <MenuBar layoutX="0.0" layoutY="1.0" prefHeight="25.0" prefWidth="500.0">
+      <menus>
+        <Menu mnemonicParsing="false" text="Home">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#trocarTelaHome" text="Inicio" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Músicas">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#trocarTelaCadastrarMusica" text="Cadastrar" />
+            <MenuItem mnemonicParsing="false" onAction="#trocarTelaListarMusica" text="Listar" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Coleções">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#trocarTelaCadastrarColecoes" text="Cadastrar" />
+            <MenuItem mnemonicParsing="false" onAction="#trocarTelaListarColecoes" text="Listar" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Playlists">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#trocarTelaCadastrarPlaylists" text="Cadastrar" />
+            <MenuItem mnemonicParsing="false" onAction="#trocarTelaListarPlaylists" text="Listar" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Artistas">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#trocarTelaCadastrarArtistas" text="Cadastrar" />
+            <MenuItem mnemonicParsing="false" onAction="#trocarTelaListarArtistas" text="Listar" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
   </children>
 </AnchorPane>

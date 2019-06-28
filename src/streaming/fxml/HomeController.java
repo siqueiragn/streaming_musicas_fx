@@ -10,14 +10,13 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import streaming.fxml.StreamingMusica;
 
 /**
  * FXML Controller class
  *
  * @author Gabriel
  */
-public class FXMLDocumentController implements Initializable {
+public class HomeController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -54,10 +53,23 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void trocarTelaListarPlaylists(ActionEvent event) {
+        StreamingMusica.trocarTela("ListarPlaylist.fxml");
     }
 
     @FXML
     private void trocarTelaCadastrarArtistas(ActionEvent event) {
+        StreamingMusica.trocarTela("CadastrarArtista.fxml");
     }
+
+    @FXML
+    private void trocarTelaListarArtistas(ActionEvent event) {
+        StreamingMusica.trocarTela("ListarArtista.fxml");
+    }
+
+    @FXML
+    private void trocarTelaHome(ActionEvent event) {
+        StreamingMusica.trocarTela("Home.fxml");
+    }
+    
     
 }
