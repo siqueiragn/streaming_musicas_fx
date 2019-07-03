@@ -55,7 +55,7 @@ public class RowMusica {
         return this.musica.getNome();
     }
      
-    public List<RowMusica> getMusicas(String pesquisa) {
+    public static List<RowMusica> getMusicas(String pesquisa) {
 
         Connection con = (new Conector()).getConexao();
       
@@ -66,12 +66,11 @@ public class RowMusica {
 "INNER JOIN POO1_LETRA L ON L.ID = M.LETRA ";
         
         try {
-            PreparedStatement ps = con.prepareStatement(query); 
-            if ( pesquisa.length() > 0) {
-                query += "WHERE M.NOME LIKE '%?%'";
-                ps.setString(1, pesquisa);      
+            
+            if ( !pesquisa.isEmpty() ) {
+                query += "WHERE UPPER(M.NOME) LIKE '%" + pesquisa.toUpperCase() + "%'";
             }
-        
+            PreparedStatement ps = con.prepareStatement(query);        
             ResultSet rs = ps.executeQuery();
         
             while (rs.next()) {
@@ -83,7 +82,7 @@ public class RowMusica {
                 Colecao colecao = new Colecao();
                 colecao.setId(rs.getInt("colecao_id"));
                 colecao.setNome(rs.getString("colecao"));
-                colecao.setLancamento(rs.getInt("colecao_lancamento"));
+                colecao.setLancamento(rs.getInt("lancamento"));
                 
                 Musica musica = new Musica();
                 musica.setId(rs.getInt("id"));

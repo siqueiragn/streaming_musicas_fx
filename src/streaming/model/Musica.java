@@ -188,5 +188,27 @@ public class Musica {
     public String toString() {
         return this.nome;
     }
+
+    public boolean insertIntoPlaylist(int playlist) {
+        Connection con = (new Conector()).getConexao();
+        
+        String query = "INSERT INTO POO1_MUSICA_PLAYLIST(id_musica, id_playlist) VALUES(?, ?)";
+
+        try {
+            PreparedStatement ps = con.prepareStatement(query); 
+            con.createStatement();            
+            ps.setInt(1, this.id);
+            ps.setInt(2, playlist);
+         
+            ps.executeUpdate();
+         
+        } catch (SQLException e ) {
+            e.printStackTrace();
+            System.out.println("Ocorreu um erro ao inserir a música!");
+            return false;
+        }
+        
+        return true;
+    }
     
 }

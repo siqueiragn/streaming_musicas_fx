@@ -67,7 +67,7 @@ public class Ouvinte {
             this.setId(chaveGerada);
             
         } catch (SQLException e ) {
-            System.out.println("Ocorreu um erro ao inserir o bootleg!");
+            System.out.println("Ocorreu um erro ao inserir o ouvinte!");
             return false;
         }
         

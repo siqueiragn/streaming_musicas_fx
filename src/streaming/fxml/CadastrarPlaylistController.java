@@ -14,7 +14,12 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import oracle.net.aso.p;
+import streaming.model.Colecao;
 import streaming.model.Musica;
+import streaming.model.Ouvinte;
+import streaming.model.Playlist;
 import streaming.model.RowMusica;
 
 /**
@@ -29,11 +34,11 @@ public class CadastrarPlaylistController implements Initializable {
     @FXML
     private TextField inputNomePlaylist;
     @FXML
-    private TableView<?> tabelaMusicas;
+    private TableView<RowMusica> tabelaMusicas;
     @FXML
     private TableColumn<RowMusica, String> musicaNomeCol;
     @FXML
-    private TableColumn<RowMusica, String> interpreteNomeCol;
+    private TableColumn<RowMusica, Colecao> colecaoNomeCol;
     @FXML
     private ListView<Musica> listaMusicasAdicionadas;
     @FXML
@@ -45,18 +50,40 @@ public class CadastrarPlaylistController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+       
+        musicaNomeCol.setCellValueFactory(new PropertyValueFactory("musica"));
+        colecaoNomeCol.setCellValueFactory(new PropertyValueFactory("colecaoNome"));
+        
+        for (RowMusica rm : RowMusica.getMusicas("")) {
+            tabelaMusicas.getItems().add(rm);
+        }
     }    
 
     @FXML
     private void addMusicaPlaylist(ActionEvent event) {
+        
+        listaMusicasAdicionadas.getItems().add(tabelaMusicas.getSelectionModel().getSelectedItem().getMusica());
+        
     }
 
     @FXML
     private void rmvMusicaPlaylist(ActionEvent event) {
+        listaMusicasAdicionadas.getItems().remove(listaMusicasAdicionadas.getSelectionModel().getSelectedItem());
     }
 
     @FXML
     private void criarPlaylist(ActionEvent event) {
+        
+        Ouvinte o = new Ouvinte();
+        o.setNome(inputNomeAutor.getText());
+        o.insert();
+        
+        Playlist p = new Playlist();
+        p.setAutor(o);
+        p.setMusicas(listaMusicasAdicionadas.getItems());
+        
+        p.insert();
+        
     }
     
     @FXML
@@ -102,6 +129,16 @@ public class CadastrarPlaylistController implements Initializable {
     @FXML
     private void trocarTelaHome(ActionEvent event) {
         StreamingMusica.trocarTela("Home.fxml");
+    }
+
+    @FXML
+    private void pesquisarMusica(ActionEvent event) {
+        String pesquisa = campoPesquisa.getText();
+        
+        tabelaMusicas.getItems().clear();
+        for (RowMusica rm : RowMusica.getMusicas(pesquisa)) {
+            tabelaMusicas.getItems().add(rm);
+        }
     }
     
 }

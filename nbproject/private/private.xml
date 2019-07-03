@@ -2,13 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/Gabriel/Documents/NetBeansProjects/StreamingMusica/src/streaming/fxml/ListarColecaoController.java</file>
-            <file>file:/C:/Users/Gabriel/Documents/NetBeansProjects/StreamingMusica/src/streaming/model/Musica.java</file>
-            <file>file:/C:/Users/Gabriel/Documents/NetBeansProjects/StreamingMusica/src/streaming/fxml/StreamingMusica.java</file>
-            <file>file:/C:/Users/Gabriel/Documents/NetBeansProjects/StreamingMusica/src/streaming/fxml/FXMLDocumentController.java</file>
-            <file>file:/C:/Users/Gabriel/Documents/NetBeansProjects/StreamingMusica/src/streaming/model/Colecao.java</file>
-            <file>file:/C:/Users/Gabriel/Documents/NetBeansProjects/StreamingMusica/src/streaming/fxml/CadastrarColecaoController.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
