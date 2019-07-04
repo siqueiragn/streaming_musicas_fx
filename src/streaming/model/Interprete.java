@@ -27,6 +27,8 @@ public class Interprete {
         this.nome = nome;
     }
 
+    public Interprete() {    }
+
     public int getId() {
         return id;
     }

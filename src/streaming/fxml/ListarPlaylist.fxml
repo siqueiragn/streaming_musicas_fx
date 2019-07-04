@@ -41,5 +41,35 @@
         </Menu>
       </menus>
     </MenuBar>
+    <TableView fx:id="musicaTable" layoutX="50.0" layoutY="279.0" prefHeight="200.0" prefWidth="403.0">
+      <columns>
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="325.0" text="Nome" fx:id="nomeMusicalCol" />
+        <TableColumn prefWidth="75.0" text="Duração" fx:id="duracaoMusicaCol" />
+      </columns>
+    </TableView>
+    <TableView fx:id="playlistTable" layoutX="50.0" layoutY="50.0" prefHeight="200.0" prefWidth="403.0">
+      <columns>
+        <TableColumn prefWidth="75.0" text="ID" fx:id="idPlaylistCol" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="145.0" text="Nome" fx:id="nomePlaylistCol" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="178.0" text="Autor" fx:id="autorPlaylistCol" />
+      </columns>
+    </TableView>
+    <Button fx:id="editarBtn" layoutX="226.0" layoutY="252.0" mnemonicParsing="false" onAction="#habilitarEdicao" text="Editar" />
+    <TextField fx:id="inputNomeAutor" disable="false" layoutX="32.0" layoutY="60.0" prefWidth="223.0" visible="false" />
+    <Label fx:id="labelNomeAutor" layoutX="32.0" layoutY="44.0" text="Autor" visible="false" />
+    <Label id="inputNomePlaylist" fx:id="labelNomePlaylist" layoutX="269.0" layoutY="44.0" text="Nome da Playlist" visible="false" />
+    <TextField fx:id="inputNomePlaylist" layoutX="269.0" layoutY="60.0" prefWidth="200.0" visible="false" />
+    <TableView fx:id="tabelaMusicas" layoutX="32.0" layoutY="161.0" prefHeight="294.0" prefWidth="223.0" visible="false">
+      <columns>
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="145.0" text="Nome" fx:id="musicaNomeCol" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="75.0" text="Interprete" fx:id="colecaoNomeCol" />
+      </columns>
+    </TableView>
+    <ListView fx:id="listaMusicasAdicionadas" layoutX="269.0" layoutY="131.0" prefHeight="200.0" prefWidth="200.0" visible="false" />
+    <Button fx:id="addMusicaPlaylist" layoutX="269.0" layoutY="342.0" mnemonicParsing="false" onAction="#addMusicaPlaylist" text="ADD" visible="false" />
+    <TextField fx:id="campoPesquisa" layoutX="32.0" layoutY="131.0" prefWidth="163.0" visible="false" />
+    <Button fx:id="rmvMusicaPlaylist" layoutX="423.0" layoutY="343.0" mnemonicParsing="false" onAction="#rmvMusicaPlaylist" text="RMV" visible="false" />
+    <Button fx:id="finalizarPlaylist" layoutX="343.0" layoutY="435.0" mnemonicParsing="false" onAction="#finalizarPlaylist" text="FINALIZAR" visible="false" />
+    <Button fx:id="pesquisarMusica" layoutX="208.0" layoutY="132.0" mnemonicParsing="false" onAction="#pesquisarMusica" prefWidth="46.0" text="GO" visible="false" />
   </children>
 </AnchorPane>

@@ -10,6 +10,8 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextField;
+import streaming.model.Artista;
 
 /**
  * FXML Controller class
@@ -17,6 +19,9 @@ import javafx.fxml.Initializable;
  * @author Gabriel
  */
 public class CadastrarArtistaController implements Initializable {
+
+    @FXML
+    private TextField inputNome;
 
     /**
      * Initializes the controller class.
@@ -69,6 +74,15 @@ public class CadastrarArtistaController implements Initializable {
     @FXML
     private void trocarTelaHome(ActionEvent event) {
         StreamingMusica.trocarTela("Home.fxml");
+    }
+
+    @FXML
+    private void criarArtista(ActionEvent event) {
+        
+        Artista i = new Artista();
+        i.setNome(inputNome.getText());
+        i.insert();
+        
     }
     
 }

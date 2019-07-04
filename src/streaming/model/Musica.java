@@ -211,4 +211,32 @@ public class Musica {
         return true;
     }
     
+    public boolean update() {
+        
+        Connection con = (new Conector()).getConexao();
+    
+        String sql =  "UPDATE POO1_MUSICA SET nome = ?, duracao = ?, letra = ?, colecao = ? "   
+                     + "WHERE ( id = ? )";
+        try{
+            PreparedStatement ps = con.prepareStatement(sql);
+            
+            ps.setInt(5, this.id); //Observe o indice do ID
+            ps.setString(1, this.nome);
+            ps.setDouble(2, this.duracao);
+            ps.setInt(3, this.letra.getId());
+            ps.setInt(4, this.colecao.getId());
+            
+            ps.executeUpdate();           
+            
+            
+        }catch(SQLException e){
+            
+            System.out.println("Ocorreu um problema ao realizar a alteração nos dados!");
+            e.printStackTrace();
+            return false;
+        }
+    
+        return true;
+    }
+    
 }

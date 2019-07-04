@@ -74,5 +74,30 @@ public class Letra {
         
         return true;
     }
+
+    public boolean update() {
+        
+        Connection con = (new Conector()).getConexao();
+    
+        String sql =  "UPDATE POO1_LETRA SET TEXTO = ? "   
+                     + "WHERE ( id = ?)";
+        try{
+            PreparedStatement ps = con.prepareStatement(sql);
+            
+            ps.setInt(2, this.id); //Observe o indice do ID
+            ps.setString(1, this.texto);
+            
+            ps.executeUpdate();           
+            
+            
+        }catch(SQLException e){
+            
+            System.out.println("Ocorreu um problema ao realizar a alteração nos dados!");
+            e.printStackTrace();
+            return false;
+        }
+    
+        return true;
+    }
     
 }

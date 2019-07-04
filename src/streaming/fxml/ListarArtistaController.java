@@ -10,6 +10,11 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import streaming.model.Artista;
 
 /**
  * FXML Controller class
@@ -18,11 +23,28 @@ import javafx.fxml.Initializable;
  */
 public class ListarArtistaController implements Initializable {
 
+    @FXML
+    private TableView<Artista> artistasTable;
+    @FXML
+    private TableColumn<Artista, ?> idArtistaCol;
+    @FXML
+    private TableColumn<Artista, ?> nomeArtistaCol;
+    @FXML
+    private TextField inputPesquisar;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        idArtistaCol.setCellValueFactory(new PropertyValueFactory("id"));
+        nomeArtistaCol.setCellValueFactory(new PropertyValueFactory("nome"));
+        
+        for (Artista a : Artista.getArtistas("")) {
+            artistasTable.getItems().add(a);
+        }
+
         // TODO
     }    
     
@@ -69,6 +91,16 @@ public class ListarArtistaController implements Initializable {
     @FXML
     private void trocarTelaHome(ActionEvent event) {
         StreamingMusica.trocarTela("Home.fxml");
+    }
+
+    @FXML
+    private void pesquisarArtistas(ActionEvent event) {
+        
+        artistasTable.getItems().clear();
+        for (Artista a : Artista.getArtistas(inputPesquisar.getText())) {
+            artistasTable.getItems().add(a);
+        }
+        
     }
     
 }

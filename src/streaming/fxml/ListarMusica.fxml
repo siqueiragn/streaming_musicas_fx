@@ -14,7 +14,7 @@
     <TextField id="duracaoMusica" fx:id="inputDuracaoMusica" layoutX="255.0" layoutY="281.0" prefHeight="25.0" prefWidth="200.0" promptText="Duração" />
     <TextArea id="letraMusica" fx:id="inputLetraMusica" layoutX="255.0" layoutY="310.0" prefHeight="135.0" prefWidth="200.0" promptText="LETRA" wrapText="true" />
     <Label layoutX="104.0" layoutY="265.0" text="COLEÇÃO" />
-    <Line endX="200.0" layoutX="251.0" layoutY="219.0" startX="-200.0" startY="0.0" />
+    <Line endX="200.0" layoutX="251.0" layoutY="210.0" startX="-200.0" startY="0.0" />
     <TableView id="album" fx:id="tableColecao" layoutX="31.0" layoutY="281.0" prefHeight="200.0" prefWidth="200.0">
       <columns>
         <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="24.0" text="ID" fx:id="colIdColecao" />
@@ -30,7 +30,6 @@
         <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="68.0" text="DURAÇÃO" fx:id="colDuracaoMusica" />
       </columns>
     </TableView>
-    <Button layoutX="217.0" layoutY="192.0" mnemonicParsing="false" onAction="#visualizarMusica" text="Visualizar" />
     <TextField fx:id="inputIdLetraMusica" layoutX="400.0" layoutY="457.0" prefWidth="51.0" visible="false" />
     <MenuBar layoutX="0.0" layoutY="1.0" prefHeight="25.0" prefWidth="500.0">
       <menus>

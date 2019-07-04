@@ -18,7 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import streaming.model.Colecao;
-import streaming.model.Interprete;
+import streaming.model.Letra;
 import streaming.model.Musica;
 
 /**
@@ -98,12 +98,24 @@ public class ListarMusicaController implements Initializable {
 
     @FXML
     private void cadastrarMusica(ActionEvent event) {
+        Musica m = tableMusica.getSelectionModel().getSelectedItem();
+        Letra l = m.getLetra();
+        l.setTexto(inputLetraMusica.getText());
+        l.update();
+        
+        m.setColecao(tableColecao.getSelectionModel().getSelectedItem());
+        m.setDuracao(Double.parseDouble(inputDuracaoMusica.getText()));
+        m.setNome(inputNomeMusica.getText());
+        m.update();
+        
+        tableMusica.getItems().clear();
+        
+        for (Musica mAux : Musica.getAll()) {
+            tableMusica.getItems().add(mAux);
+        }
+        
     }
 
-    @FXML
-    private void visualizarMusica(ActionEvent event) {
-    }
-    
     @FXML
     private void trocarTelaCadastrarMusica(ActionEvent event) {
         StreamingMusica.trocarTela("CadastrarMusica.fxml");

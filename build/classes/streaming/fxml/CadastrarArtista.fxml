@@ -41,5 +41,8 @@
         </Menu>
       </menus>
     </MenuBar>
+    <TextField fx:id="inputNome" layoutX="150.0" layoutY="214.0" prefWidth="200.0" />
+    <Label layoutX="234.0" layoutY="188.0" text="Nome" />
+    <Button layoutX="228.0" layoutY="250.0" mnemonicParsing="false" onAction="#criarArtista" text="Criar" />
   </children>
 </AnchorPane>
