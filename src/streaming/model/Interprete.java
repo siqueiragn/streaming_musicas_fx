@@ -72,5 +72,50 @@ public class Interprete {
         
         return interpretes;
     }
+
+    public boolean insertAsInterpreteIntoColecao(Colecao c) {
+        
+        Connection con = (new Conector()).getConexao();
+        
+        String query = "INSERT INTO poo1_interpretes_colecoes(id, interprete, colecao) VALUES(SEQ_INT_COL.NEXTVAL,?,?)";
+        
+        try {
+           
+            PreparedStatement ps = con.prepareStatement(query); 
+            ps.setInt(1, this.getId());
+            ps.setInt(2, c.getId());
+           
+            ps.executeUpdate();
+            
+        } catch (SQLException e ) {
+            e.printStackTrace();
+            System.out.println("Ocorreu um erro ao inserir!");
+            return false;
+        }
+        
+        return true;
+    }
+    
+    public boolean insertAsCompositorIntoColecao(Colecao c) {
+        
+        Connection con = (new Conector()).getConexao();
+        
+        String query = "INSERT INTO poo1_compositores_colecoes(id, interprete, colecao) VALUES(SEQ_COMP_COL.NEXTVAL,?,?)";
+        
+        try {
+            PreparedStatement ps = con.prepareStatement(query); 
+            ps.setInt(1, this.getId());
+            ps.setInt(2, c.getId());
+            System.out.println("ID INTERPRETE->" + this.getId() + " Coleção ID - " + c.getId());
+            ps.executeUpdate();
+ 
+        } catch (SQLException e ) {
+            e.printStackTrace();
+            System.out.println("Ocorreu um erro ao inserir!");
+            return false;
+        }
+        
+        return true;
+    }
     
 }

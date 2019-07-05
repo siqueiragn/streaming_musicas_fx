@@ -102,13 +102,23 @@ public class CadastrarColecaoController implements Initializable {
                 Album a = new Album();
                 a.setNome(nomeColecao.getText());
                 a.setLancamento(Integer.parseInt(anoColecao.getText()));
+                a.setCompositores(listaCompositoresInserir);
+                a.setInterpretes(listaInterpretesInserir);
                 a.insert();
                 
+                for (Interprete interprete : listaInterpretesInserir) {
+                    interprete.insertAsInterpreteIntoColecao(a);    
+                }                
+                for (Interprete compositor : listaCompositoresInserir) {
+                    compositor.insertAsCompositorIntoColecao(a);
+                }
             break;
             case "Bootleg":
                 Bootleg b = new Bootleg();
                 b.setNome(nomeColecao.getText());
                 b.setLancamento(Integer.parseInt(anoColecao.getText()));
+                b.setCompositores(listaCompositoresInserir);
+                b.setInterpretes(listaInterpretesInserir);
                 b.insert();
                 
             break;
@@ -116,6 +126,8 @@ public class CadastrarColecaoController implements Initializable {
                 Compilacao c = new Compilacao();
                 c.setNome(nomeColecao.getText());
                 c.setLancamento(Integer.parseInt(anoColecao.getText()));
+                c.setCompositores(listaCompositoresInserir);
+                c.setInterpretes(listaInterpretesInserir);
                 c.insert();
                
             break;
@@ -123,6 +135,8 @@ public class CadastrarColecaoController implements Initializable {
                 Single s = new Single();
                 s.setNome(nomeColecao.getText());
                 s.setLancamento(Integer.parseInt(anoColecao.getText()));
+                s.setCompositores(listaCompositoresInserir);
+                s.setInterpretes(listaInterpretesInserir);
                 s.insert();
                 
             break;
